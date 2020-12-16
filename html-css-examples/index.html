@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <title>ToDo Manager</title>
+
+    <!-- Custom CSS for this document -->
+    <link href="custom.css" rel="stylesheet">
+  </head>
+  <body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-dark navbar-expand-sm bg-success fixed-top">
+      <!-- Toggle the left sidebar -->
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#left-sidebar" aria-controls="left-sidebar" aria-expanded="false" aria-label="Toggle sidebar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <!-- Logo and title -->
+      <a class="navbar-brand" href="index.html">
+        <svg class="bi bi-check-all" width="30" height="30" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" clip-rule="evenodd"/>
+          <path />
+        </svg>
+        ToDo Manager
+      </a>
+      
+      <!-- Search form -->
+      <form class="form-inline my-2 my-lg-0 mx-auto d-none d-sm-block" action="#" role="search" aria-label="Quick search">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search query">
+      </form>
+
+      <!-- Link to the user profile -->
+      <div class="navbar-nav ml-md-auto">
+        <a class="nav-item nav-link" href="#">
+          <svg class="bi bi-people-circle" width="30" height="30" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path  />
+            <path fill-rule="evenodd" clip-rule="evenodd"/>
+            <path fill-rule="evenodd" clip-rule="evenodd"/>
+          </svg>
+        </a>
+      </div>
+    
+    </nav>
+
+    <!-- Content of the page -->
+    <div class="container-fluid">
+      <div class="row vheight-100">
+        <!-- Left sidebar -->
+        <aside class="collapse d-sm-block col-sm-4 col-12 bg-light below-nav" id="left-sidebar">
+          <div class="list-group list-group-flush">
+            <a href="#" class="list-group-item list-group-item-action active">All</a>
+            <a href="#" class="list-group-item list-group-item-action">Important</a>
+            <a href="#" class="list-group-item list-group-item-action">Today</a>
+            <a href="#" class="list-group-item list-group-item-action">Next 7 Days</a>
+            <a href="#" class="list-group-item list-group-item-action">Private</a>
+            <a href="#" class="list-group-item list-group-item-action">Shared With...</a>
+          </div>
+
+          <div class="my-5">
+            <h6 class="border-bottom border-gray p-3 mb-0">Projects</h6>
+            <div class="list-group list-group-flush">
+              <a href="#" class="list-group-item list-group-item-action">Web Applications I</a>
+              <a href="#" class="list-group-item list-group-item-action">Personal</a>
+            </div>
+          </div>
+        </aside>
+
+        <!-- Main content -->
+        <main class="col-sm-8 col-12 below-nav">
+          <h1>All</h1>
+
+          <!-- List of tasks -->
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              <div class="d-flex w-100 justify-content-between">
+                <div class="custom-control custom-checkbox">
+                  <input type="checkbox" class="custom-control-input" id="check-t1">
+                  <label class="custom-control-label" for="check-t1">Complete Lab 2</label>
+                  <span class="badge badge-primary ml-4">Web Applications I</span>
+                </div>
+                <small>Friday 27 March 2020 at 11:30</small>
+              </div>
+            </li>
+            <li class="list-group-item">
+              <div class="d-flex w-100 justify-content-between">
+                <div class="custom-control custom-checkbox">
+                  <input type="checkbox" class="custom-control-input" id="check-t2">
+                  <label class="custom-control-label" for="check-t2">Buy some groceries</label>
+                  <span class="badge badge-success ml-4">Personal</span>
+                </div>
+                <svg class="bi bi-person-square" width="1.2em" height="1.2em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" clip-rule="evenodd"/>
+                  <path fill-rule="evenodd" clip-rule="evenodd"/>
+                </svg>
+                <small>Today at 14:00</small>
+              </div>
+            </li>
+            <li class="list-group-item">
+              <div class="d-flex w-100 justify-content-between">
+                <div class="custom-control custom-checkbox">
+                  <input type="checkbox" class="custom-control-input important" id="check-t3">
+                  <label class="custom-control-label" for="check-t3">Read a good book!</label>
+                </div>
+              </div>
+            </li>
+          </ul>
+
+          <!-- Add a new task... -->
+          <button type="button" class="btn btn-lg btn-success fixed-right-bottom">&#43;</button>
+
+        </main>
+      </div>
+    </div>
+
+    <!-- JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+  </body>
+</html>
