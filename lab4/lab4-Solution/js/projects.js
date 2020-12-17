@@ -4,7 +4,7 @@ class Project{
         this.filterView = filterView;
     }
 
-     /**
+    /**
      * Function to create the list of projects in the side menu
      */
     createAllProjects() {
