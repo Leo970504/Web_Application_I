@@ -32,7 +32,7 @@
 
 .custom-checkbox .custom-control-input.important:checked~.custom-control-label::before{
     background-color: red;
-  }
+}
 
 .custom-checkbox .custom-control-input.important:focus~.custom-control-label::before{
     box-shadow:  0 0 0 0.2rem rgb(255, 148, 148);

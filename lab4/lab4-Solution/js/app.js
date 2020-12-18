@@ -70,6 +70,4 @@ class App {
         this.filterView.showTasks('all');
         this.projetView.createAllProjects();
     }
-
-    
 }

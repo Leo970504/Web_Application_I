@@ -14,19 +14,19 @@
     <link href="css/custom.css" rel="stylesheet">
 
     <!-- JavaScript (note the defer attribute) -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS, then Moment js -->
     <script defer src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script defer src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-    <script defer sec="js/moment.min.js"></script>
+    <script defer src="js/moment.min.js"></script>
 
     <!-- Custom JavaScript -->
-    <script defer src="js/task.js"></script>
-    <script defer src="js/taskmanager.js"></script>
-    <script defer src="js/filters.js"></script>
-    <script defer src="js/projects.js"></script>
-    <script defer src="js/app.js"></script>
-    <script defer src="js/main.js"></script>
+    <script defer src = "js/task.js"></script>
+    <script defer src ="js/taskmanager.js"></script>
+    <script defer src ="js/filters.js"></script>
+    <script defer src ="js/projects.js"></script>
+    <script defer src ="js/app.js"></script>
+    <script defer src ="js/main.js"></script>
   </head>
   <body>
 
@@ -69,12 +69,12 @@
         <!-- Left sidebar -->
         <aside class="collapse d-sm-block col-sm-4 col-12 bg-light below-nav" id="left-sidebar">
           <div class="list-group list-group-flush">
-            <a href="#" id = "filter-all" class="list-group-item list-group-item-action active">All</a>
-            <a href="#" id = "filter-important" class="list-group-item list-group-item-action">Important</a>
-            <a href="#" id = "filter-today" class="list-group-item list-group-item-action">Today</a>
-            <a href="#" id = "filter-week" class="list-group-item list-group-item-action">Next 7 Days</a>
-            <a href="#" id = "filter-private" class="list-group-item list-group-item-action">Private</a>
-            <a href="#" id = "filter-shared" class="list-group-item list-group-item-action">Shared With...</a>
+            <a href="#" data-id = "filter-all" class="list-group-item list-group-item-action active">All</a>
+            <a href="#" data-id = "filter-important" class="list-group-item list-group-item-action">Important</a>
+            <a href="#" data-id = "filter-today" class="list-group-item list-group-item-action">Today</a>
+            <a href="#" data-id = "filter-week" class="list-group-item list-group-item-action">Next 7 Days</a>
+            <a href="#" data-id = "filter-private" class="list-group-item list-group-item-action">Private</a>
+            <a href="#" data-id = "filter-shared" class="list-group-item list-group-item-action">Shared With...</a>
           </div>
 
           <div class="my-5">
@@ -95,7 +95,7 @@
           </ul>
 
           <!-- Add a new task... -->
-          <button type="button" class="btn btn-lg btn-success fixed-right-bottom">&#43;</button>
+          <button type="button" id="addButton" class="btn btn-lg btn-success fixed-right-bottom" data-toggle="modal" data-target="#addModal">&#43;</button>
 
         </main>
       </div>
@@ -112,55 +112,55 @@
           </div>
           <form role="form" method="POST" action="" id="addForm">
             <div class="modal-body">
-              <div class="form-group">
-                <label class="control-label">Description</label>
-                <div>
-                  <input type="text" class="form-control input-lg" name="Description" placeholder="Type a description..." id="form_description" required>
-                </div>
-              </div>
-
-              <div class="form-group">
-                <label class="control-label">Project</label>
-                <div>
-                    <input type="text" class="form-control input-lg" name="Description" placeholder="Type a project for the task..." id="form_project">
-                </div>
-              </div>
-
-              <div class="form-group">
-                <div>
-                  <label for="form_important" class="control-label">Important</label>
-                  <input type="checkbox" name="form_important" id="form_important"/>          
-                </div>
-              </div>
-
-              <div class="form-group">
-                <div>
-                  <label for="form_private" class="control-label">Private</label>
-                  <input type="checkbox" name="form_private" id="form_private" checked/>          
-                </div>
-              </div>
-
-              <div class="form-group">
-                <label class="control-label">Deadline</label>
-                <div>
-                    <input type="date" class="form-control input-lg" name="Deadline" id="form_deadline_date">
-                </div>
-              </div>
-
-              <div class="form-group">
-                <div>
-                  <input type="time" class="form-control input-lg" name="Deadline" id="form_deadline_time">
-                </div>
-              </div>
-              <div class="modal-footer">
                 <div class="form-group">
+                  <label class="control-label">Description</label>
                   <div>
-                      <button type="submit" class="btn btn-primary">Add</button>
+                      <input type="text" class="form-control input-lg" name="Description" placeholder="Type a description..." id="form_description" required>
                   </div>
                 </div>
-              </div>
-              
+
+                <div class="form-group">
+                  <label class="control-label">Project</label>
+                  <div>
+                      <input type="text" class="form-control input-lg" name="Description" placeholder="Type a project for the task..." id="form_project">
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <div>
+                    <label for="form_important" class="control-label">Important</label>
+                    <input type="checkbox" name="form_important" id="form_important"/>          
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <div>
+                    <label for="form_private" class="control-label">Private</label>
+                    <input type="checkbox" name="form_private" id="form_private" checked/>          
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label class="control-label">Deadline</label>
+                  <div>
+                      <input type="date" class="form-control input-lg" name="Deadline" id="form_deadline_date">
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <div>
+                    <input type="time" class="form-control input-lg" name="Deadline" id="form_deadline_time">
+                  </div>
+                </div>
             </div>
+            <div class="modal-footer">
+              <div class="form-group">
+                <div>
+                    <button type="submit" class="btn btn-primary">Add</button>
+                </div>
+              </div>
+            </div>
+
           </form>
         </div>
       </div>
