@@ -58,10 +58,10 @@ async function initializeForm() {
                         // add an alert message in DOM
                         document.getElementById('errorMsg').innerHTML = `
             <div class="alert alert-danger alert-dismissible fade show" role="danger">
-              <strong>Error:</strong> <span>${errorString}</span> 
-              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
+                <strong>Error:</strong> <span>${errorString}</span> 
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
             </div>`;
                     }
                 });

@@ -30,10 +30,9 @@ async function insertNewExam(exam) {
                 response.json()
                 .then( (obj) => {reject(obj);} ) // error msg in the response body
                 .catch( (err) => {reject({ errors: [{ param: "Application", msg: "Cannot parse server response" }] }) }); // something else
-                  }
+            }
         }).catch( (err) => {reject({ errors: [{ param: "Server", msg: "Cannot communicate" }] }) }); // connection errors
     });
-    
 }
 
 async function getAllCourses() {
@@ -41,7 +40,6 @@ async function getAllCourses() {
     const jsoncourses = await response.json();
     const courses = jsoncourses.map((jc) => Course.from(jc));
     return courses;
-  }
-  
+}
 
 export { getAllExams, insertNewExam, getAllCourses };
