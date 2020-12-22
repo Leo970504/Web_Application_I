@@ -30,7 +30,5 @@ class App extends React.Component {
             <OptionalExamForm courses={fakeCourses} mode={'add'} exam={fakeExams[2]}/>
         </div>
     }
-
 }
-
 export default App;
