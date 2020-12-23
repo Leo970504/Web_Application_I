@@ -8,8 +8,7 @@ function createProject(project) {
 
 const Filters = (props) => {
     let {projects} = props;
-
-  
+    
     return (
     <div>
         <div className="list-group list-group-flush">
@@ -27,8 +26,8 @@ const Filters = (props) => {
                 {projects.map(createProject) }
             </div>
         </div>
-      </div>
+    </div>
     );
-  }
-  
-  export default Filters;
+}
+
+export default Filters;
