@@ -56,8 +56,8 @@ class App extends React.Component {
                         deleteExam={this.deleteExam}
             />
             <OptionalExamForm courses={this.state.courses} mode={this.state.mode} exam={this.state.editedExam}
-                              addOrEditExam={this.addOrEditExam}
-                              cancelExam={this.cancelExam}
+                            addOrEditExam={this.addOrEditExam}
+                            cancelExam={this.cancelExam}
             />
         </div>
     }
